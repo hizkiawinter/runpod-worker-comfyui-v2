@@ -70,13 +70,13 @@ class TestRunpodWorkerComfy(unittest.TestCase):
         mock_response.status_code = 200
         mock_requests.return_value = mock_response
 
-        result = handler.check_server("http://127.0.0.1:8188", 1, 50)
+        result = handler.check_server("http://127.0.0.1:8188", 10, 5000)
         self.assertTrue(result)
 
     @patch("handler.requests.get")
     def test_check_server_server_down(self, mock_requests):
         mock_requests.get.side_effect = handler.requests.RequestException()
-        result = handler.check_server("http://127.0.0.1:8188", 1, 50)
+        result = handler.check_server("http://127.0.0.1:8188", 10, 5000)
         self.assertFalse(result)
 
     @patch("handler.urllib.request.urlopen")
