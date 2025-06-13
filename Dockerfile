@@ -53,7 +53,7 @@ ADD src/extra_model_paths.yaml ./
 WORKDIR /
 
 # Install Python runtime dependencies for the handler
-RUN uv pip install runpod requests websocket-client opencv-python scikit-image numexpr 
+RUN uv pip install runpod requests websocket-client opencv-python scikit-image numexpr pandas
 
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
