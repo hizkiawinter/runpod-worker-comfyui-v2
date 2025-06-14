@@ -91,9 +91,9 @@ WORKDIR /comfyui
 RUN comfy-node-install comfyui-kjnodes comfyui-ic-light comfyui_nnlatentupscale comfyui_essentials ComfyUI_JPS-Nodes images-grid-comfy-plugin ComfyUI_Noise cg-use-everywhere ComfyUI_Comfyroll_CustomNodes comfyui-custom-scripts comfyui-to-python-extension comfyui-frame-interpolation comfyui_ipadapter_plus  comfyui-videohelpersuite comfyui_fizznodes comfyui_controlnet_aux  comfyui-advanced-controlnet comfyui-animatediff-evolved  ComfyUI-Manager
 
 # Create necessary directories upfront
-RUN mkdir -p models/checkpoints models/vae models/unet models/clip  models/controlnet models/clipvision models/ipadapter models/loras 
+RUN mkdir -p models/checkpoints models/vae models/unet models/clip  models/controlnet models/clipvision models/ipadapter models/loras models/animatediff_models
 ADD skripsi-lora.safetensors /comfyui/models/loras 
-RUN wget -q -O custom_nodes/ComfyUI-AnimateDiff-Evolved/models/hotshotxl_mm_v1.pth https://huggingface.co/Kosinkadink/HotShot-XL-MotionModels/resolve/150e621dd65b4c9af2c87a287f8502a6e482c97f/hotshotxl_mm_v1.pth?download=true 
+
 
 # Download checkpoints/vae/unet/clip models to include in image based on model type
 RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
