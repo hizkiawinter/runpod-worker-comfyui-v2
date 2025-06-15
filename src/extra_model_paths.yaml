@@ -2,7 +2,7 @@ runpod_worker_comfy:
   base_path: /runpod-volume
   checkpoints: models/checkpoints/
   clip: models/clip/
-  clip_vision: models/clipvision/
+  clipvision: models/clipvision/
   configs: models/configs/
   controlnet: models/controlnet/
   embeddings: models/embeddings/
