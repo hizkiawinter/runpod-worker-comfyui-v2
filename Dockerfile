@@ -95,7 +95,7 @@ WORKDIR /comfyui
 RUN comfy-node-install comfyui-kjnodes comfyui-ic-light comfyui_nnlatentupscale comfyui_essentials ComfyUI_JPS-Nodes images-grid-comfy-plugin ComfyUI_Noise cg-use-everywhere ComfyUI_Comfyroll_CustomNodes comfyui-custom-scripts comfyui-to-python-extension comfyui-frame-interpolation comfyui_ipadapter_plus  comfyui-videohelpersuite comfyui_fizznodes comfyui_controlnet_aux  comfyui-advanced-controlnet ComfyUI-Manager
 
 # Create necessary directories upfront
-RUN mkdir -p models/checkpoints models/vae models/unet models/clip  models/controlnet models/clipvision models/ipadapter models/loras models/animatediff_models
+RUN mkdir -p models/checkpoints models/vae models/unet models/clip  models/controlnet models/clip_vision models/ipadapter models/loras models/animatediff_models
 ADD skripsi-lora.safetensors /comfyui/models/loras 
 
 
@@ -107,7 +107,7 @@ RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
       wget -q -O models/controlnet/xinsir-controlnet-canny.safetensors https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors?download=true && \ 
       wget -q -O models/controlnet/xinsir-controlnet-depth.safetensors https://huggingface.co/xinsir/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors?download=true && \
       wget -q -O models/controlnet/xinsir-controlnet-openpose.safetensors https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors?download=true && \ 
-      wget -q -O models/clipvision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors && \ 
+      wget -q -O models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors && \ 
       wget -q -O models/ipadapter/ip-adapter_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors; \
     fi
 
