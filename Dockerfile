@@ -111,6 +111,8 @@ RUN if [ "$MODEL_TYPE" = "sdxl" ]; then \
       wget -q -O models/ipadapter/ip-adapter_sdxl_vit-h.safetensors https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors; \
     fi
 
+RUN echo "ClipVision files:" && ls -lh models/clip_vision/
+
 # Stage 3: Final image
 FROM base AS final
 
