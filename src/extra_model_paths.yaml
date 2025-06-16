@@ -11,4 +11,4 @@ runpod_worker_comfy:
   vae: models/vae/
   unet: models/unet/
   ipadapter: models/ipadapter/
-  animatediff_models: models/animatediff_models
+  animatediff_models: models/animatediff_models/
