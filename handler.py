@@ -24,7 +24,7 @@ COMFY_API_AVAILABLE_MAX_RETRIES = 500
 #   • WEBSOCKET_RECONNECT_DELAY_S sets the sleep in seconds between attempts.
 #
 # If the respective env-vars are not supplied we fall back to sensible defaults ("5" and "3").
-WEBSOCKET_RECONNECT_ATTEMPTS = int(os.environ.get("WEBSOCKET_RECONNECT_ATTEMPTS", 5))
+WEBSOCKET_RECONNECT_ATTEMPTS = int(os.environ.get("WEBSOCKET_RECONNECT_ATTEMPTS", 10))
 WEBSOCKET_RECONNECT_DELAY_S = int(os.environ.get("WEBSOCKET_RECONNECT_DELAY_S", 180))
 
 # Extra verbose websocket trace logs (set WEBSOCKET_TRACE=true to enable)
