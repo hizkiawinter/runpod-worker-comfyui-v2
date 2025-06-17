@@ -25,7 +25,7 @@ COMFY_API_AVAILABLE_MAX_RETRIES = 500
 #
 # If the respective env-vars are not supplied we fall back to sensible defaults ("5" and "3").
 WEBSOCKET_RECONNECT_ATTEMPTS = int(os.environ.get("WEBSOCKET_RECONNECT_ATTEMPTS", 15))
-WEBSOCKET_RECONNECT_DELAY_S = int(os.environ.get("WEBSOCKET_RECONNECT_DELAY_S", 300))
+WEBSOCKET_RECONNECT_DELAY_S = int(os.environ.get("WEBSOCKET_RECONNECT_DELAY_S", 360))
 
 # Extra verbose websocket trace logs (set WEBSOCKET_TRACE=true to enable)
 if os.environ.get("WEBSOCKET_TRACE", "false").lower() == "true":
